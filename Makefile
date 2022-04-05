@@ -1,5 +1,8 @@
 CC = gcc
 o = -o
+w = website/
+ou = our/
+
 
 # make for the website code.
 website: server client
@@ -7,17 +10,17 @@ website: server client
 # make for our code.
 our: our_server our_client
 
-server: server.c
-		$(CC) server.c $(o) server
+server: $(w)server.c
+		$(CC) $(w)server.c $(o) server
 
-client: client.c
-		$(CC) client.c $(o) client
+client: $(w)client.c
+		$(CC) $(w)client.c $(o) client
 
-our_server: our_server.c
-		$(CC) our_server.c $(o) our_server
+our_server: $(ou)our_server.c
+		$(CC) $(ou)our_server.c $(o) our_server
 
-our_client: our_client.c
-		$(CC) our_client.c $(o) our_client
+our_client: $(ou)our_client.c
+		$(CC) $(ou)our_client.c $(o) our_client
 
 # make clean
 clean:
